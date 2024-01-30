@@ -1,22 +1,38 @@
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('../image/background.jpg');
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    background-color: #1a1a1a;
     font-family: sans-serif;
 }
 
-a{
+.body-dark {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../image/background.jpg');
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.body-light {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('../image/background.jpg');  
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
     text-decoration: none;
 }
 
-button{
+button {
     border: 0;
     outline: none;
     font-family: inherit;
@@ -24,95 +40,111 @@ button{
     cursor: pointer;
 }
 
-.navbar-dark{
+.navbar-dark {
     height: 90px;
     background-color: #1a1a1a;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
 }
 
-.navbar-light{
+.navbar-light {
     height: 90px;
-    background:transparent ;
+    background: rgb(180, 180, 180, 0.7);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar-dark .logo-dark i{
+.theme-dark {
+    height: 90px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-light {
+    height: 90px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-dark .logo-dark i {
     color: white;
     font-size: 22px;
 }
 
-.navbar-light .logo-light i{
+.navbar-light .logo-light i {
     color: #ff0077;
     font-size: 22px;
 }
 
-.navbar-dark .logo-dark a{
+.navbar-dark .logo-dark a {
     font-size: 24px;
     font-weight: 700;
     color: #0aa5ff;
     margin-left: 12px;
 }
 
-.navbar-light .logo-light a{
+.navbar-light .logo-light a {
     font-size: 24px;
     font-weight: 700;
     color: whitesmoke;
     margin-left: 12px;
 }
 
-.menu-dark{
+.menu-dark {
     display: flex;
     align-items: center;
     gap: 32px;
 }
 
-.menu-light{
+.menu-light {
     display: flex;
     align-items: center;
     gap: 32px;
 }
 
-.menu-links-dark{
+.menu-links-dark {
     display: flex;
     gap: 24px;
     border-right: 1px solid #999999;
     padding-inline: 24px;
 }
 
-.menu-links-light{
+.menu-links-light {
     display: flex;
     gap: 24px;
     border-right: 1px solid #0aa5ff;
     padding-inline: 24px;
 }
 
-.menu-links-dark a{
+.menu-links-dark a {
     font-weight: 500;
     color: #999999;
     padding: 8px 16px;
 }
 
-.menu-links-light a{
+.menu-links-light a {
     font-weight: 500;
     color: #ffffff;
     padding: 8px 16px;
 }
 
-.menu-links-dark a:hover{
+.menu-links-dark a:hover {
     color: white;
 }
 
-.menu-links-light a:hover{
+.menu-links-light a:hover {
     color: rgb(104, 179, 61);
 }
 
-.log-in-dark{
+.log-in-dark {
     font-weight: 500;
     padding: 12px 22px;
     background-color: transparent;
@@ -122,7 +154,7 @@ button{
     transition: 0.2s;
 }
 
-.log-in-light{
+.log-in-light {
     font-weight: 500;
     padding: 12px 22px;
     background-color: transparent;
@@ -132,24 +164,24 @@ button{
     transition: 0.2s;
 }
 
-.log-in-dark:hover{
+.log-in-dark:hover {
     background-color: #0aa5ff;
     color: #fff;
 }
 
-.log-in-light:hover{
+.log-in-light:hover {
     background-color: #18b926;
     color: #fff;
 }
 
-.menu-btn-dark{
+.menu-btn-dark {
     font-size: 32px;
     color: #fff;
     display: none;
     cursor: pointer;
 }
 
-.menu-btn-light{
+.menu-btn-light {
     font-size: 32px;
     color: #fff;
     display: none;
@@ -163,9 +195,9 @@ button{
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -175,66 +207,113 @@ button{
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked+.slider {
     background-color: #19a2c1;
-  }
-  
-  input:focus + .slider {
+}
+
+input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
+}
 
-  .switch input { 
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  .switch {
+}
+
+.switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
-  
-  .switch input { 
+
+}
+
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  .slider.round {
+}
+
+.slider.round {
     border-radius: 34px;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
     border-radius: 50%;
-  }
-  .switch-checkbox {
-    padding: 10px
-  }
+}
 
-@media (max-width:53rem){
-    .menu-dark{
+.switch-checkbox {
+    padding: 10px;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 260px;
+    background: rgba(180, 180, 180, 0.6);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 348px;
+}
+
+.dropdown_menu a {
+    font-size: 500;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+}
+
+.dropdown_menu a:hover {
+    color: #ccc;
+}
+
+.dropdown_menu .log-in-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.open-btn {
+    background-color: #ff0077;
+}
+
+@media (max-width:53rem) {
+    .menu-dark {
         display: none;
     }
 
-    .menu-light{
+    .menu-light {
         display: none;
     }
 
-    .menu-btn-dark{
+    .menu-btn-dark {
         display: block;
     }
 
-    .menu-btn-light{
+    .menu-btn-light {
+        display: block;
+    }
+
+    .dropdown_menu {
         display: block;
     }
 

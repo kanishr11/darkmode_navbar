@@ -1,10 +1,11 @@
-import { Navbar } from "./Component/Navbar";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar } from './Component/Navbar';
 
 function App() {
   return (<>
+  <div>
   <Navbar/>
-  <h1 style={{color:'whitesmoke' , textAlign:'center'}}>HELLO NATURE LOVER'S</h1>
+  </div>
   </>);
 }
 
