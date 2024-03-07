@@ -68,6 +68,18 @@ export const Navbar = () => {
         <a href='#'>Nature</a>
         <a href='#'>Blog</a>
         <a href='#'>About</a>
+        <div className={theme ? 'theme-dark' : 'theme-light'}>
+          <span style={{ color: theme ? 'white' : 'yellow' }}><MdOutlineDarkMode style={{ fontSize: '20px' }} /></span>
+          <div className='switch-checkbox'>
+            <label className='switch'>
+              <input type='checkbox'
+                onChange={() => setTheme(!theme)}
+              />
+              <span className='slider round'></span>
+            </label>
+          </div>
+          <span style={{ color: theme ? 'yellow' : 'white' }}><MdLightMode style={{ fontSize: '20px' }} /></span>
+        </div>
         <button className='log-in-btn'>Log In</button>
       </div>}
       {/* <div className={theme ? 'dropdown_menu' : 'dropdown_menu open'}>
